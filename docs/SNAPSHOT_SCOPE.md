@@ -1,6 +1,6 @@
 # UniSaver Legacy — Portfolio Snapshot Scope
 
-This repository is a sanitized historical source snapshot of the author's 2023–2024 Northumbria University final-year e-commerce prototype. It was prepared from a separate legacy source archive on 31 October 2026. It is independent of the newly planned UniSaver application and its engineering proposal.
+This repository contains a sanitized snapshot of UniSaver Legacy, a 2023–2024 Northumbria University final-year e-commerce project. The snapshot was prepared from a separate legacy source archive on 31 October 2026. It is independent of the new UniSaver application and its engineering proposal.
 
 ## Publication-only Changes
 
@@ -14,7 +14,7 @@ The snapshot excludes original `.env` credentials, the local SQLite database and
 
 ## Verification Evidence and Boundaries
 
-- **EXECUTED-PASS (owner-run, pre-publication):** 101/101 PHP syntax checks, `composer validate --strict`, and `git diff --cached --check`.
+- **EXECUTED-PASS (local, pre-publication):** 101/101 PHP syntax checks, `composer validate --strict`, and `git diff --cached --check`.
 - **EXECUTED-PASS (limited scan):** No matches in the targeted staged-file token-pattern check; not a comprehensive secret or privacy audit.
 - **STATIC-REVIEW:** Source structure, declared dependencies, original feature areas, known access-control/payment/pricing gaps and excluded files.
 - **NOT-RUN:** Clean dependency install, app boot, migrations, PHPUnit behavioural tests, frontend build, browser verification, Stripe payment flow and production deployment.
@@ -25,4 +25,4 @@ The historical application logic retains known security limitations. It must not
 
 Initial public snapshot: [`7d1f392`](https://github.com/PetrosTam/unisaver-legacy/commit/7d1f392313f4f31f11f3fdadfd3dcd5392278ade). The public repository is intended for portfolio review, not as evidence of current production readiness or successful student-financial outcomes.
 
-The [proprietary LICENSE](../LICENSE) applies only to original materials for which the stated author holds the relevant rights. University terms and third-party rights remain applicable; this documentation does not independently establish permission to publish every component.
+The [proprietary LICENSE](../LICENSE) applies to original materials only where Petros Tamboutsiaris holds the relevant rights. University terms and third-party rights remain applicable. Publication permissions for individual components have not been independently verified.

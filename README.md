@@ -73,16 +73,16 @@ The original database, product uploads and images are deliberately excluded, so 
 
 ## Verification and Security Limitations
 
-**Static checks passed on the published initial snapshot:** 101/101 PHP files passed `php -l` in the owner's local PowerShell checks; `composer validate --strict` passed; and a targeted staged-secret-pattern scan reported no matches. These checks are limited and are not proof of secure behaviour or the absence of all secrets.
+**Initial snapshot checks:** PHP syntax checks passed for all 101 files; `composer validate --strict` passed; and a targeted secret-pattern scan found no matches. These checks do not confirm runtime behaviour, application security or the absence of all secrets.
 
 **NOT-RUN on this sanitized snapshot:** clean dependency installation, Laravel boot, migrations, PHPUnit application tests, Vite build, browser flows, payment tests and production deployment. The existing PHPUnit files are example-level tests; there is no verified CI pipeline for this repository.
 
-**Known legacy risks:** order details are not consistently scoped to the authenticated owner (potential IDOR); prices may rely on client-held cart data; Stripe success handling lacks robust order/session correlation and signature-verified, idempotent webhook settlement; stock concurrency and failure paths are not comprehensively tested. Do **not** deploy this code with real users, student data or live payments.
+**Known legacy risks:** order details are not consistently restricted to the authenticated customer (potential IDOR); prices may rely on client-held cart data; Stripe success handling lacks robust order/session correlation and signature-verified, idempotent webhook settlement; stock concurrency and failure paths are not comprehensively tested. Do **not** deploy this code with real users, student data or live payments.
 
 The sanitized source excludes local secrets, personal records, database files, logs, third-party product imagery, dependency directories and prior Git history. See [Portfolio Snapshot Scope](docs/SNAPSHOT_SCOPE.md) for details.
 
 ## License
 
-Copyright (c) 2023–2024 Petros Tamboutsiaris. All rights reserved, to the extent of the rights held by the author.
+Copyright (c) 2023–2024 Petros Tamboutsiaris. All rights reserved, subject to applicable university and third-party rights.
 
-The author's original materials are provided for portfolio inspection under the [proprietary LICENSE](LICENSE); no general open-source license is granted. Northumbria University rights, third-party licenses and other applicable restrictions remain unaffected. Public availability does not establish independent verification of publication rights.
+This repository is available for portfolio review under the [proprietary LICENSE](LICENSE); no general open-source license is granted. Northumbria University and third-party rights remain unaffected. Publication rights for individual components have not been independently verified.
